@@ -34,6 +34,8 @@ p {
 header {
   background-image: url(./imagens/header-360.png);
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   height: 29.375rem;
   display: flex;
   flex-direction: column;
@@ -48,12 +50,37 @@ header img {
   top: 3.34375rem;
 }
 header h1 {
-  font-size: 2.8125rem;
+  font-size: 2.8125em;
   margin-bottom: 0.1875rem;
 }
 header p {
-  font-size: 1.125rem;
+  font-size: 1.125em;
   line-height: normal;
+}
+@media (min-width: 361px) {
+  header {
+    background-image: url(imagens/header-1024.png);
+  }
+}
+@media (min-width: 1025px) {
+  header {
+    background-image: url(imagens/header-1920.png);
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    height: 31.125rem;
+  }
+}
+@media (min-width: 1366px) {
+  header {
+    height: 39.0625rem;
+  }
+}
+@media (min-width: 1920px) {
+  header {
+    height: 58.5625rem;
+  }
 }
 
 .sectionOne {
@@ -189,6 +216,9 @@ header p {
 
 .sectionFour {
   padding: 2.1875rem 1.25rem 3.01875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .sectionFour > p {
   color: var(--gray);
@@ -196,23 +226,24 @@ header p {
 }
 
 .interactive {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 .interactive > img {
   width: 100%;
+  max-width: 37.506875rem;
 }
 .interactive .circle {
   background-color: var(--yellow);
   border: 1px solid;
   color: #000;
   border-radius: 50%;
-  width: 11.16625rem;
-  height: 11.16625rem;
-  line-height: 1rem;
-  font-size: 0.875rem;
+  width: 55%;
+  aspect-ratio: 1/1;
+  font-size: min(4vw, 1.625rem);
+  margin-top: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,8 +251,8 @@ header p {
   position: absolute;
 }
 .interactive button {
-  width: 1.831875rem;
-  height: 1.831875rem;
+  width: 8%;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   box-shadow: 0 4px 10px var(--box-shadow-color);
   display: flex;
@@ -231,11 +262,30 @@ header p {
 }
 .interactive button.plus {
   background-color: var(--green);
+  bottom: 16%;
+}
+.interactive button.plus.first {
+  left: 8%;
+}
+.interactive button.plus.second {
+  right: 8%;
 }
 .interactive button.minus {
   background-color: var(--purple);
-  top: 0;
+  top: 16%;
 }
 .interactive button img {
-  width: 0.689375rem;
+  width: 42%;
+}
+
+footer {
+  background-color: var(--purple);
+  height: 18.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer img {
+  width: 70%;
+  max-width: 20.461875rem;
 }/*# sourceMappingURL=styles.css.map */
