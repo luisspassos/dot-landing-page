@@ -17,6 +17,7 @@
   --card-border-bottom-width: 2.5rem;
   --line-height: 1.375rem;
   --box-shadow-color: rgba(0, 0, 0, 16%);
+  --corner-circle-translateY: 15.5%;
 }
 
 body {
@@ -38,7 +39,6 @@ button {
 .cornerCircle {
   position: absolute;
   bottom: 0;
-  transform: translateY(15.5%);
   min-height: 3.91rem;
   height: 8vw;
   max-height: 12.035rem;
@@ -115,7 +115,7 @@ header p {
 }
 .sectionOne img:last-child {
   left: 0;
-  transform: translateX(-50%);
+  transform: translate(-50%, var(--corner-circle-translateY));
 }
 .sectionOne .content {
   border: 3px solid;
@@ -188,10 +188,8 @@ header p {
   margin-bottom: 10%;
 }
 .sectionTwo > img {
-  height: 3.91rem;
-  position: absolute;
-  margin-top: 0;
-  right: -3.73125rem;
+  right: 0;
+  transform: translate(50%, var(--corner-circle-translateY));
 }
 
 .cards {
@@ -246,8 +244,8 @@ header p {
 .sectionThree h2 {
   text-align: center;
   color: var(--green);
-  font-size: 1.5625rem;
-  padding: 2.1875rem 0;
+  font-size: clamp(1.5625rem, 3vw, 2.375rem);
+  padding-block: min(9%, 4.375rem);
 }
 .sectionThree .imgContainer {
   position: relative;
