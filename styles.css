@@ -21,14 +21,27 @@
 
 body {
   color: var(--white);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.4;
 }
 
 button {
   border: 0;
 }
 
-p {
-  line-height: var(--line-height);
+.yellowSubtitle {
+  color: var(--yellow);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  text-align: center;
+}
+
+.cornerCircle {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(15.5%);
+  min-height: 3.91rem;
+  height: 8vw;
+  max-height: 12.035rem;
 }
 
 header {
@@ -46,15 +59,14 @@ header {
 }
 header img {
   position: absolute;
-  height: 2.578125rem;
-  top: 3.34375rem;
+  height: 9%;
+  top: 10%;
 }
 header h1 {
-  font-size: 2.8125em;
-  margin-bottom: 0.1875rem;
+  font-size: min(12vw, 5.4375rem);
 }
 header p {
-  font-size: 1.125em;
+  font-size: min(4.9vw, 1.875rem);
   line-height: normal;
 }
 @media (min-width: 361px) {
@@ -88,11 +100,22 @@ header p {
   padding: 6.6125rem 1.25rem 3.8875rem;
   position: relative;
 }
+@media (min-width: 904px) {
+  .sectionOne {
+    padding: 3.9375rem 0;
+  }
+}
+.sectionOne h2 {
+  margin-bottom: 2.0625rem;
+}
+@media (max-width: 903px) {
+  .sectionOne h2 {
+    display: none;
+  }
+}
 .sectionOne img:last-child {
-  position: absolute;
-  height: 3.91rem;
-  left: -3.74375rem;
-  bottom: -0.648rem;
+  left: 0;
+  transform: translateX(-50%);
 }
 .sectionOne .content {
   border: 3px solid;
@@ -102,18 +125,33 @@ header p {
   flex-direction: column;
   align-items: center;
   position: relative;
+  max-width: 52.375rem;
+  margin: 0 auto;
+}
+@media (min-width: 904px) {
+  .sectionOne .content {
+    padding: 2.3125rem 4.1875rem 2.3125rem 3.3625rem;
+    flex-direction: row;
+    gap: 5.425rem;
+  }
+}
+.sectionOne .content h2 {
+  display: block;
+  margin-bottom: 2.5rem;
+}
+@media (min-width: 904px) {
+  .sectionOne .content h2 {
+    display: none;
+  }
 }
 .sectionOne .content img:first-child {
   position: absolute;
   top: -4.7rem;
 }
-.sectionOne .content h2 {
-  color: var(--yellow);
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
-}
-.sectionOne .content .texts {
-  line-height: var(--line-height);
+@media (min-width: 904px) {
+  .sectionOne .content img:first-child {
+    position: static;
+  }
 }
 .sectionOne .content .texts p {
   margin-bottom: 1rem;
@@ -128,15 +166,26 @@ header p {
 
 .sectionTwo {
   background-color: var(--green);
-  padding: 2.1875rem 0 3.1875rem;
+  padding-inline: 1.25rem;
+  padding-top: min(9vw, 4.375rem);
+  padding-bottom: max(10%, 3.1875rem);
   position: relative;
   overflow: hidden;
 }
-.sectionTwo * + * {
-  margin-top: 2.1875rem;
+.sectionTwo h2 {
+  margin-bottom: 2.5rem;
 }
-.sectionTwo p {
-  padding: 0 1.25rem;
+@media (max-width: 904px) {
+  .sectionTwo h2 {
+    display: none;
+  }
+}
+.sectionTwo .content {
+  max-width: 59rem;
+  margin: 0 auto;
+}
+.sectionTwo .content p {
+  margin-bottom: 10%;
 }
 .sectionTwo > img {
   height: 3.91rem;
@@ -146,10 +195,19 @@ header p {
 }
 
 .cards {
-  padding: 0 1.8125rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.25rem;
+}
+@media (min-width: 984px) {
+  .cards {
+    gap: 1.1875rem;
+  }
 }
 .cards article {
   height: 17.125rem;
+  width: 18.875rem;
   background-color: var(--white);
   border-radius: 1.25rem;
   border-bottom: var(--card-border-bottom-width) solid var(--purple);
