@@ -13,12 +13,12 @@
   --gray: #707070;
   --green: #03b5b0;
   --white: #fff;
-  --card-border-bottom-width: 2.5rem;
   --line-height: 1.375rem;
   --box-shadow-color: rgba(0, 0, 0, 16%);
   --corner-circle-translateY: 15.5%;
   --section-padding-inline: 1.25rem;
   --p-division-padding: clamp(2.1875rem, 10%, 4.375rem);
+  --card-border-radius: 1.25rem;
 }
 
 $breakpoint: 904px;
@@ -32,7 +32,7 @@ body {
 button {
   border: 0;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.2s filter;
 }
 
 button:hover {
@@ -227,32 +227,58 @@ header {
   }
 
   article {
-    height: 17.125rem;
     width: 18.875rem;
-
     background-color: var(--white);
-    border-radius: 1.25rem;
-    border-bottom: var(--card-border-bottom-width) solid var(--purple);
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    position: relative;
+    border-radius: var(--card-border-radius);
     box-shadow: 0 3px 6px var(--box-shadow-color);
 
-    button {
+    figure {
       display: flex;
-      align-items: center;
       justify-content: center;
-      background-color: white;
-      position: absolute;
-      bottom: 0;
-      border-radius: 50%;
-      width: 3.375rem;
-      height: 3.375rem;
-      transform: translateY(100%);
+    }
 
-      .active {
-        background-color: var(--purple);
+    .content {
+      background-color: var(--purple);
+      height: 2.5rem;
+      border-bottom-left-radius: var(--card-border-radius);
+      border-bottom-right-radius: var(--card-border-radius);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &.active {
+        background-color: var(--yellow);
+        height: 21.5625rem;
+
+        button {
+          background-color: var(--purple);
+        }
+
+        p {
+          display: block;
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        background-color: var(--white);
+        border-radius: 50%;
+        width: 3.375rem;
+        height: 3.375rem;
+        margin-top: 0.3rem;
+
+        &.active {
+          background-color: var(--purple);
+        }
+      }
+
+      p {
+        display: none;
       }
     }
 

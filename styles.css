@@ -14,12 +14,12 @@
   --gray: #707070;
   --green: #03b5b0;
   --white: #fff;
-  --card-border-bottom-width: 2.5rem;
   --line-height: 1.375rem;
   --box-shadow-color: rgba(0, 0, 0, 16%);
   --corner-circle-translateY: 15.5%;
   --section-padding-inline: 1.25rem;
   --p-division-padding: clamp(2.1875rem, 10%, 4.375rem);
+  --card-border-radius: 1.25rem;
 }
 
 body {
@@ -31,7 +31,7 @@ body {
 button {
   border: 0;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.2s filter;
 }
 
 button:hover {
@@ -217,31 +217,50 @@ header p {
   }
 }
 .cards article {
-  height: 17.125rem;
   width: 18.875rem;
   background-color: var(--white);
-  border-radius: 1.25rem;
-  border-bottom: var(--card-border-bottom-width) solid var(--purple);
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  position: relative;
+  border-radius: var(--card-border-radius);
   box-shadow: 0 3px 6px var(--box-shadow-color);
 }
-.cards article button {
+.cards article figure {
+  display: flex;
+  justify-content: center;
+}
+.cards article .content {
+  background-color: var(--purple);
+  height: 2.5rem;
+  border-bottom-left-radius: var(--card-border-radius);
+  border-bottom-right-radius: var(--card-border-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cards article .content.active {
+  background-color: var(--yellow);
+  height: 21.5625rem;
+}
+.cards article .content.active button {
+  background-color: var(--purple);
+}
+.cards article .content.active p {
+  display: block;
+}
+.cards article .content button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  position: absolute;
-  bottom: 0;
+  flex-shrink: 0;
+  background-color: var(--white);
   border-radius: 50%;
   width: 3.375rem;
   height: 3.375rem;
-  transform: translateY(100%);
+  margin-top: 0.3rem;
 }
-.cards article button .active {
+.cards article .content button.active {
   background-color: var(--purple);
+}
+.cards article .content p {
+  display: none;
 }
 .cards article:first-child {
   padding-top: 2.56875rem;
