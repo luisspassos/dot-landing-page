@@ -12,7 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Raleway:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script src="index.js" defer></script>
+    <script src="dropdown.js" defer></script>
+    <script src="interactiveCircle.js" defer></script>
   </head>
   <body>
     <header>
@@ -61,32 +62,54 @@
             nulla facilisi.
           </p>
           <div class="cards">
-            <!-- <article>
-              <img src="icones/icon-02.svg" alt="Pessoa explicando" />
-              <button>
-                <img
-                  src="icones/icon-arrow-down.svg"
-                  alt="Ícone de abrir caixa de texto"
-                />
-              </button>
+            <article>
+              <figure>
+                <img src="icones/icon-02.svg" alt="Mulher analisando" />
+              </figure>
+              <div class="content">
+                <button aria-label="Abrir caixa de texto">
+                  <img
+                    src="icones/icon-arrow.svg"
+                    alt="Ícone de abrir caixa de texto"
+                  />
+                </button>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                  nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                  aliquip ex ea commodo consequat.
+                </p>
+              </div>
             </article>
             <article>
-              <img src="icones/icon-03.svg" alt="Pasta" />
-              <button>
-                <img
-                  src="icones/icon-arrow-down.svg"
-                  alt="Ícone de abrir caixa de texto"
-                />
-              </button>
-            </article> -->
+              <figure>
+                <img src="icones/icon-03.svg" alt="Pasta" />
+              </figure>
+              <div class="content">
+                <button aria-label="Abrir caixa de texto">
+                  <img
+                    src="icones/icon-arrow.svg"
+                    alt="Ícone de abrir caixa de texto"
+                  />
+                </button>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                  nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                  aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </article>
             <article>
               <figure>
                 <img src="icones/icon-04.svg" alt="Pessoas conversando" />
               </figure>
-              <div class="content active">
-                <button>
+              <div class="content">
+                <button aria-label="Abrir caixa de texto">
                   <img
-                    src="icones/icon-arrow-down.svg"
+                    src="icones/icon-arrow.svg"
                     alt="Ícone de abrir caixa de texto"
                   />
                 </button>
@@ -143,14 +166,19 @@
           </p>
           <div class="interactive">
             <img src="icones/interactive.svg" alt="Imagem interativa" />
-            <div class="circle">Texto com fundo <strong>amarelo!</strong></div>
-            <button class="minus">
+            <div class="circle">
+              Texto com fundo
+              <strong>amarelo!</strong>
+              <strong>cinza!</strong>
+              <strong>vermelho</strong>
+            </div>
+            <button class="minus yellow">
               <img src="icones/icon-minus.svg" alt="Ícone de menos" />
             </button>
-            <button class="plus first">
+            <button class="plus first red">
               <img src="icones/icon-plus.svg" alt="Ícone de mais" />
             </button>
-            <button class="plus second">
+            <button class="plus second gray">
               <img src="icones/icon-plus.svg" alt="Ícone de mais" />
             </button>
           </div>

@@ -20,6 +20,7 @@
   --section-padding-inline: 1.25rem;
   --p-division-padding: clamp(2.1875rem, 10%, 4.375rem);
   --card-border-radius: 1.25rem;
+  --card-transition-duration: 0.2s;
 }
 
 body {
@@ -209,6 +210,7 @@ header p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
   gap: 2.25rem;
 }
 @media (min-width: 984px) {
@@ -225,6 +227,11 @@ header p {
 .cards article figure {
   display: flex;
   justify-content: center;
+  align-items: baseline;
+  height: 14.625rem;
+}
+.cards article figure:first-child {
+  padding: 20px;
 }
 .cards article .content {
   background-color: var(--purple);
@@ -234,6 +241,7 @@ header p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition-duration: var(--card-transition-duration);
 }
 .cards article .content.active {
   background-color: var(--yellow);
@@ -242,8 +250,13 @@ header p {
 .cards article .content.active button {
   background-color: var(--purple);
 }
+.cards article .content.active button img {
+  transform: rotate(180deg);
+  filter: brightness(0) invert(1);
+}
 .cards article .content.active p {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 .cards article .content button {
   display: flex;
@@ -256,19 +269,26 @@ header p {
   height: 3.375rem;
   margin-top: 0.3rem;
 }
-.cards article .content button.active {
-  background-color: var(--purple);
+.cards article .content button img {
+  transition-duration: var(--card-transition-duration);
+  transition-property: transform, filter;
 }
 .cards article .content p {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: var(--card-transition-duration);
+  padding: 1.375rem 1.75rem 3.375rem;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  color: var(--purple);
 }
-.cards article:first-child {
+.cards article:first-child figure {
   padding-top: 2.56875rem;
 }
-.cards article:nth-child(2) {
+.cards article:nth-child(2) figure {
   padding-top: 4.49375rem;
 }
-.cards article:last-child {
+.cards article:last-child figure {
   padding-top: 2.3rem;
 }
 
@@ -356,6 +376,14 @@ header p {
   justify-content: center;
   flex-direction: column;
   position: absolute;
+}
+.interactive .circle.gray {
+  background-color: var(--gray);
+  color: var(--white);
+}
+.interactive .circle.red {
+  background-color: var(--red);
+  color: var(--white);
 }
 .interactive button {
   width: 8%;
