@@ -250,6 +250,10 @@ header {
       width: 3.375rem;
       height: 3.375rem;
       transform: translateY(100%);
+
+      .active {
+        background-color: var(--purple);
+      }
     }
 
     &:first-child {
