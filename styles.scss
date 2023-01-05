@@ -463,8 +463,18 @@ header {
 
     position: absolute;
 
+    img {
+      width: 42%;
+
+      transition: 0.2s;
+    }
+
     &.active {
       background-color: var(--purple);
+
+      img {
+        transform: rotate(180deg);
+      }
     }
 
     &.top {
@@ -481,10 +491,6 @@ header {
       &.second {
         right: 8%;
       }
-    }
-
-    img {
-      width: 42%;
     }
   }
 }
