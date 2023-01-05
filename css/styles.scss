@@ -292,7 +292,7 @@ header {
 
         img {
           transition-duration: var(--card-transition-duration);
-          transition-property: transform, filter;
+          transition-property: transform;
         }
       }
 
@@ -306,6 +306,7 @@ header {
 
         font-size: 1.125rem;
         line-height: 1.3125rem;
+        text-overflow: clip;
 
         color: var(--purple);
       }

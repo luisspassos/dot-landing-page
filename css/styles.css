@@ -272,7 +272,7 @@ header p {
 }
 .cards article .content button img {
   transition-duration: var(--card-transition-duration);
-  transition-property: transform, filter;
+  transition-property: transform;
 }
 .cards article .content p {
   visibility: hidden;
@@ -281,6 +281,7 @@ header p {
   padding: 1.375rem 1.75rem 3.375rem;
   font-size: 1.125rem;
   line-height: 1.3125rem;
+  text-overflow: clip;
   color: var(--purple);
 }
 .cards article:first-child figure {
