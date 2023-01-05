@@ -412,9 +412,6 @@ header p {
 .interactive button.bottom {
   bottom: 16%;
 }
-.interactive button.bottom.active {
-  background-color: var(--purple);
-}
 .interactive button.bottom.first {
   left: 8%;
 }

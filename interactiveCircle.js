@@ -1,52 +1,62 @@
-const circle = document.querySelector('.interactive .circle')
+const circle = document.querySelector('.interactive .circle');
 
-const buttons = document.querySelectorAll('.interactive button')
-const [buttonYellow, buttonRed, buttonGray] = buttons
+const buttons = document.querySelectorAll('.interactive button');
+const [buttonYellow, buttonRed, buttonGray] = buttons;
 
-const texts = document.querySelectorAll('.interactive .circle strong')
-const [textYellow, textRed, textGray] = texts
+const texts = document.querySelectorAll('.interactive .circle strong');
+const [textYellow, textRed, textGray] = texts;
 
 function handleColorChange(button, color, text) {
-
   function resetStyles() {
-    circle.className = 'circle'
+    circle.className = 'circle';
 
     for (const text of texts) {
-      text.classList.remove('active')
+      text.classList.remove('active');
     }
 
     for (const button of buttons) {
-      button.classList.remove('active')
+      button.classList.remove('active');
 
-      const icon = button.firstElementChild
+      const icon = button.firstElementChild;
 
-      icon.src = 'icones/icon-plus.svg'
+      icon.src = 'icones/icon-plus.svg';
     }
+
+    buttonYellow.setAttribute(
+      'aria-label',
+      'Mudar cor do círculo para amarelo'
+    );
+
+    buttonRed.setAttribute('aria-label', 'Mudar cor do círculo para vermelho');
+
+    buttonGray.setAttribute('aria-label', 'Mudar cor do círculo para cinza');
   }
 
-  resetStyles()
+  function addNewStyles() {
+    text.classList.add('active');
+    button.classList.add('active');
 
-  text.classList.add('active')
-  circle.classList.add(color)
+    if (color) circle.classList.add(color);
 
-  button.classList.add('active')
+    const icon = button.firstElementChild;
 
-  const icon = button.firstElementChild;
+    icon.src = 'icones/icon-minus.svg';
+  }
 
-  icon.src = 'icones/icon-minus.svg'
+  resetStyles();
+  addNewStyles();
 
-
+  button.removeAttribute('aria-label');
 }
 
-
 buttonYellow.addEventListener('click', () => {
-  handleColorChange(buttonYellow, undefined, textYellow)
-})
+  handleColorChange(buttonYellow, undefined, textYellow);
+});
 
 buttonRed.addEventListener('click', () => {
-  handleColorChange(buttonRed, 'red', textRed)
-})
+  handleColorChange(buttonRed, 'red', textRed);
+});
 
 buttonGray.addEventListener('click', () => {
-  handleColorChange(buttonGray, 'gray', textGray)
-})
+  handleColorChange(buttonGray, 'gray', textGray);
+});

@@ -455,7 +455,7 @@ header {
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     box-shadow: 0 4px 10px var(--box-shadow-color);
-    background-color: var(--green)
+    background-color: var(--green);
 
     display: flex;
     align-items: center;
@@ -473,10 +473,6 @@ header {
 
     &.bottom {
       bottom: 16%;
-
-      &.active {
-        background-color: var(--purple);
-      }
 
       &.first {
         left: 8%;
