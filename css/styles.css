@@ -63,7 +63,7 @@ section .content {
 }
 
 header {
-  background-image: url(./imagens/header-360.png);
+  background-image: url(../imagens/header-360.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -88,12 +88,12 @@ header p {
 }
 @media (min-width: 361px) {
   header {
-    background-image: url(imagens/header-1024.png);
+    background-image: url(../imagens/header-1024.png);
   }
 }
 @media (min-width: 1025px) {
   header {
-    background-image: url(imagens/header-1920.png);
+    background-image: url(../imagens/header-1920.png);
   }
 }
 @media (min-width: 1024px) {
