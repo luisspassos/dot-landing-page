@@ -20,6 +20,7 @@
   --p-division-padding: clamp(2.1875rem, 10%, 4.375rem);
   --card-border-radius: 1.25rem;
   --card-transition-duration: 0.2s;
+  --interactive-circle-default-color: #000;
 }
 
 $breakpoint: 904px;
@@ -415,8 +416,8 @@ header {
 
   .circle {
     background-color: var(--yellow);
-    border: 1px solid;
-    color: #000;
+    border: clamp(1px, 0.2vw, 2px) solid var(--interactive-circle-default-color);
+    color: var(--interactive-circle-default-color);
     border-radius: 50%;
     width: 55%;
     aspect-ratio: 1 / 1;
@@ -439,6 +440,14 @@ header {
       background-color: var(--red);
       color: var(--white);
     }
+
+    strong {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
   }
 
   button {
@@ -446,6 +455,7 @@ header {
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     box-shadow: 0 4px 10px var(--box-shadow-color);
+    background-color: var(--green)
 
     display: flex;
     align-items: center;
@@ -453,9 +463,20 @@ header {
 
     position: absolute;
 
-    &.plus {
-      background-color: var(--green);
+    &.active {
+      background-color: var(--purple);
+    }
+
+    &.top {
+      top: 16%;
+    }
+
+    &.bottom {
       bottom: 16%;
+
+      &.active {
+        background-color: var(--purple);
+      }
 
       &.first {
         left: 8%;
@@ -464,11 +485,6 @@ header {
       &.second {
         right: 8%;
       }
-    }
-
-    &.minus {
-      background-color: var(--purple);
-      top: 16%;
     }
 
     img {

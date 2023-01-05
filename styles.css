@@ -21,6 +21,7 @@
   --p-division-padding: clamp(2.1875rem, 10%, 4.375rem);
   --card-border-radius: 1.25rem;
   --card-transition-duration: 0.2s;
+  --interactive-circle-default-color: #000;
 }
 
 body {
@@ -364,8 +365,8 @@ header p {
 }
 .interactive .circle {
   background-color: var(--yellow);
-  border: 1px solid;
-  color: #000;
+  border: clamp(1px, 0.2vw, 2px) solid var(--interactive-circle-default-color);
+  color: var(--interactive-circle-default-color);
   border-radius: 50%;
   width: 55%;
   aspect-ratio: 1/1;
@@ -385,29 +386,40 @@ header p {
   background-color: var(--red);
   color: var(--white);
 }
+.interactive .circle strong {
+  display: none;
+}
+.interactive .circle strong.active {
+  display: block;
+}
 .interactive button {
   width: 8%;
   aspect-ratio: 1/1;
   border-radius: 50%;
   box-shadow: 0 4px 10px var(--box-shadow-color);
+  background-color: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
 }
-.interactive button.plus {
-  background-color: var(--green);
+.interactive button.active {
+  background-color: var(--purple);
+}
+.interactive button.top {
+  top: 16%;
+}
+.interactive button.bottom {
   bottom: 16%;
 }
-.interactive button.plus.first {
+.interactive button.bottom.active {
+  background-color: var(--purple);
+}
+.interactive button.bottom.first {
   left: 8%;
 }
-.interactive button.plus.second {
+.interactive button.bottom.second {
   right: 8%;
-}
-.interactive button.minus {
-  background-color: var(--purple);
-  top: 16%;
 }
 .interactive button img {
   width: 42%;
